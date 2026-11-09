@@ -19,7 +19,7 @@
             kopia.IsChecked = false;
             wymiana.IsChecked = false;
 
-            ekspers.IsToggled = false;
+            ekspres.IsToggled = false;
 
             rabat.Text = string.Empty;
 
@@ -47,6 +47,12 @@
                     cena += cena * 0.50m;
                 }
 
+                string wpisanyKod = Rabat.Text?.Trim().ToUpper() ?? "";
+
+                if (wpisanyKod != null)
+                {
+                    cena -= cena * 0.10m;
+                }
                 lblPodsumowanie.TextColor = Colors.Green;
 
                 lblPodsumowanie.Text = $"Klient: {imie.Text}\n" +

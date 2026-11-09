@@ -17,7 +17,7 @@
             
             <Label
                 Text="Dane klienta:"
-                TextColor ="Black"
+                TextColor ="White"
                 HorizontalTextAlignment="Center"
                 FontSize="18"
                 FontAttributes="Bold"
@@ -27,7 +27,7 @@
 
             <Label 
                 Text="Rodzaj usłgi"
-                TextColor ="Black"
+                TextColor ="White"
                 HorizontalTextAlignment="Center"
                 FontSize="18"
                 FontAttributes="Bold"/>
@@ -55,24 +55,24 @@
                 <Label Text="Wymiana pasty na termoprzewodzącą premium (+40zł)"/>
             </HorizontalStackLayout>
             <HorizontalStackLayout>
-                <Switch x:Name="ekspers"/>
+                <Switch x:Name="ekspres"/>
                 <Label Text="Usługa ekspresowa w 24H (+50% do sumy)"/>
             </HorizontalStackLayout>
 
             <Label Text="Kod rabatowy:"/>
             <Entry x:Name="rabat" Placeholder="Wpisz kod rabatowy np. TECHNIK10"/>
-            <Grid ColumnDefinitions="2">
+            <Grid ColumnDefinitions="*,*">
                 <Button
                     x:Name="Oblicz"
                     Text="Oblicz i podsumuj" 
-                    Grid.Column="1"
+                    Grid.Column="0"
                     BackgroundColor="#00796B"
                     TextColor="White"
                     Clicked="oblicz"/>
                 <Button
                     x:Name="wyczysc"
                     Text="Wyczyść formularz" 
-                    Grid.Column="2"
+                    Grid.Column="1"
                     BackgroundColor="#757575"
                     TextColor="White"
                     Clicked="czyszczenie"/>
@@ -80,7 +80,7 @@
             <Border BackgroundColor="White">
                 <Label
                     Text="Podsumowanie:"
-                    TextColor ="Black"
+                    TextColor ="White"
                     HorizontalTextAlignment="Center"
                     FontSize="18"
                     FontAttributes="Bold"/>
