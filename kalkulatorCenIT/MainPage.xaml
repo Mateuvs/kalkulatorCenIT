@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KalkulatorCenIT.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="15"
+            Spacing="12">
+            <Label
+                Text="Kalkulator Zleceń Serwisowych"
+                BackgroundColor="#004D40"
+                TextColor ="White"
+                FontSize="20"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"/>
+            
+            <Label
+                Text="Dane klienta:"
+                TextColor ="Black"
+                HorizontalTextAlignment="Center"
+                FontSize="18"
+                FontAttributes="Bold"
+                />
+            <Entry Placeholder="Imię i Nazwisko lub telefon klienta" x:Name="imie"/>
+            <Entry Placeholder="Model urządzenia (np. laptop, PC)" x:Name="urzadzenie"/>
+
+            <Label 
+                Text="Rodzaj usłgi"
+                TextColor ="Black"
+                HorizontalTextAlignment="Center"
+                FontSize="18"
+                FontAttributes="Bold"/>
+            <HorizontalStackLayout>
+                <RadioButton GroupName="Uslugi"
+                         IsChecked="True"
+                         x:Name="diagnostyka"/>
+                <Label Text="Diagnostyka i czyszczenie układu chłodzenia (100zł)"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <RadioButton GroupName="Uslugi" x:Name="konfig"/>
+                <Label Text="Instalacja i konfiguracja systemu OS (150zł)"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <RadioButton GroupName="Uslugi" x:Name="naprawa"/>
+                <Label Text="Naprawa płyty głównej/lutowanie (250zł)"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout>
+                <CheckBox x:Name="kopia"/>
+                <Label Text="Kopia zapasowa danych (+80zł)"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <CheckBox x:Name="wymiana"/>
+                <Label Text="Wymiana pasty na termoprzewodzącą premium (+40zł)"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Switch x:Name="ekspers"/>
+                <Label Text="Usługa ekspresowa w 24H (+50% do sumy)"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Kod rabatowy:"/>
+            <Entry x:Name="rabat" Placeholder="Wpisz kod rabatowy np. TECHNIK10"/>
+            <Grid ColumnDefinitions="2">
+                <Button
+                    x:Name="Oblicz"
+                    Text="Oblicz i podsumuj" 
+                    Grid.Column="1"
+                    BackgroundColor="#00796B"
+                    TextColor="White"
+                    Clicked="oblicz"/>
+                <Button
+                    x:Name="wyczysc"
+                    Text="Wyczyść formularz" 
+                    Grid.Column="2"
+                    BackgroundColor="#757575"
+                    TextColor="White"
+                    Clicked="czyszczenie"/>
+            </Grid>
+            <Border BackgroundColor="White">
+                <Label
+                    Text="Podsumowanie:"
+                    TextColor ="Black"
+                    HorizontalTextAlignment="Center"
+                    FontSize="18"
+                    FontAttributes="Bold"/>
+                <Label x:Name="lblPodsumowanie" Text="Wprowadź dale i kliknij oblicz"/>
+                <Button Text="Zatwierdź zlecenie"
+                        BackgroundColor="#2E7D32"
+                        TextColor="White"
+                        Clicked="zatwierdz"/>
+                        
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
